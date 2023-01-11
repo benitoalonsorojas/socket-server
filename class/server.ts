@@ -43,9 +43,10 @@ export default class Server{
       console.log(client.id);
       
       
-      socket.login(client);
+      socket.configUser(client, this.io);
       socket.mensaje(client,this.io);
-      socket.desconectar(client);
+      socket.desconectar(client, this.io);
+      socket.getUsers(client, this.io);
       
     }); 
   }
